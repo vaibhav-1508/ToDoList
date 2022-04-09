@@ -197,20 +197,24 @@ ul.todo li .buttons button.complete svg {
     transition: 0.2s ease;
 }
 
-ul#completed.todo li.buttons button.complete svg{
+#completed li.buttons button.complete svg{
     background:  rgb(30, 225, 111);
     border: 0px;
 
 }
 
-ul#completed.todo li.buttons button.complete svg .fill{
+#completed li.buttons button.complete svg .fill{
     fill: #fff;
 }
 
-ul:not(#completed).todo li.buttons button.complete:hover svg{
+not(#completed) li.buttons button.complete:hover svg{
     background: rgba(30, 225, 111,0.2);
 }
 
 .noFill{
     fill:none;
+}
+
+#completed{
+    opacity: 0.4;
 }
