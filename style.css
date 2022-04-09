@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 body{
-    background: rgb(255, 255, 255);
     padding: 80px 0 0;
 }
 body, input, button{
@@ -31,10 +30,7 @@ header input{
     float: left;
     color: rgb(255, 255, 255);
     background: rgba(255, 255, 255, 0.2);
-    border-top-right-radius: 25px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 25px;
+    border-radius: 3px 25px 25px 3px;
     border: 0px;
     box-shadow: none;
     padding: 0 60px 0 0;
@@ -86,10 +82,10 @@ header button{
 }
 
 header button svg{
-    width: 16px;
-    height: 16px;
     display: flex;
-    margin: 11.8px;
+    height: 25px;
+    width: 25px;
+    margin-left: 6px;
 }
 
 header button svg .fill{
@@ -111,12 +107,19 @@ ul.todo{
 
 ul.todo li{
     width: 100%;
-    height: 50px;
+    min-height: 50px;
     float: left;
     background: rgb(255, 255, 255);
     border-radius: 5px;
+    position: relative;
     box-shadow: 0px 2px 4px rgba(66, 49, 49, 0.50);
     margin: 0 0 12px 0;
+    padding: 14px 100px 14px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+    line-height: 22px;
+
 }
 
 ul.todo li:last-of-type{
@@ -128,5 +131,86 @@ ul.todo li .buttons{
     height:100px;
     position: absolute;
     top: 0;
-    
+    right: 0;
+
+}
+
+ul.todo li .buttons button{
+    width: 50px;
+    height: 50px;
+    float: left;
+    background: none;
+    border: 0px;
+    box-shadow: none;
+    outline: none;
+    position: relative;
+
+
+    -webkit-appearance: none;
+    -ms-appearance:none;
+    -moz-appearance:none;
+    -o-appearance:none;
+    cursor: pointer;
+    appearance: none;
+}
+
+ul.todo li .buttons button:last-of-type:before{
+    content: '';
+    width: 1px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    background: #edf0f1;
+
+}
+
+
+ul.todo li .buttons button svg{
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    margin: -36px 0 0 -32px;
+}
+
+ul.todo li .buttons button svg .fill{
+    transition: fill 0.2s ease;
+}
+
+ul.todo li .buttons button.remove svg .fill{
+    fill: rgb(188, 188, 188);
+}
+
+ul.todo li .buttons button.remove:hover svg .fill{
+    fill: chocolate;
+}
+
+ul.todo li .buttons button.complete svg .fill{
+    fill: rgb(30, 225, 111);
+}
+
+ul.todo li .buttons button.complete svg {
+    border-radius: 11px;
+    border: 2px solid rgb(30, 225, 111);
+    transition: 0.2s ease;
+}
+
+ul#completed.todo li.buttons button.complete svg{
+    background:  rgb(30, 225, 111);
+    border: 0px;
+
+}
+
+ul#completed.todo li.buttons button.complete svg .fill{
+    fill: #fff;
+}
+
+ul:not(#completed).todo li.buttons button.complete:hover svg{
+    background: rgba(30, 225, 111,0.2);
+}
+
+.noFill{
+    fill:none;
 }
